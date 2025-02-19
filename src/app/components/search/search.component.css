@@ -1,0 +1,9 @@
+ul > li {
+    font-size: medium;
+    color: black;
+    margin-bottom: 0.5rem;
+}
+
+ul {
+    list-style-type: none;
+  }

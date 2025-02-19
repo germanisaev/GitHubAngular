@@ -1,0 +1,10 @@
+<li>
+    <div class="card flex-row">
+        <img class="card-img-left card-img-responsive" [src]="repository.owner.avatar_url"/>
+        <div class="card-body">
+            <p class="card-title"><a [href]="repository.html_url" target="_blank">{{ repository.name }}</a></p>
+            <button (click)="sendBookmark()" (keyup.enter)="sendBookmark()" class="btn btn-xs btn-primary">bookmark</button>
+        </div>
+    </div>
+</li>
+

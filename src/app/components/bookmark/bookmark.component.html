@@ -1,0 +1,6 @@
+
+<li>
+    <img [src]="bookmark.owner.avatar_url" style="width: 50px; height: auto;" alt="avatar" />
+    <a [href]="bookmark.html_url" target="_blank">{{ bookmark.name }}</a>
+    <button (click)="deleteBookmark()" class="btn btn-xs btn-primary">remove</button>
+</li>

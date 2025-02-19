@@ -1,0 +1,11 @@
+
+<div class="card">
+    <h5 class="card-header">Bookmarks</h5>
+    <div class="card-body">
+        <ul>
+            @for (book of bookmarks; track book.name) {
+                <app-bookmark [bookmark]="book" (removeBookmark)="removeBookmark(book)"></app-bookmark>
+            }
+        </ul>
+    </div>
+</div>

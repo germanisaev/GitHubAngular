@@ -1,0 +1,30 @@
+<div class="container bg-container">
+    <div class="row">
+        <div class="col-md-6 col-xs-12 mx-auto">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" [(ngModel)]="searchTerm" (keyup.enter)="search()" placeholder="Search GitHub repositories." aria-label="Search GitHub repositories." aria-describedby="basic-addon2">
+                
+                <div class="input-group-append">
+                    <span id="basic-addon2"><button class="btn btn-primary" (click)="search()">Search</button></span>
+                </div>
+            </div>
+
+            <ul>
+                @for (repo of repositories; track repo.name) {
+                    <app-repository [repository]="repo" (bookmarkEvent)="reciveBookmark($event)"></app-repository>
+                } 
+                @empty {
+                    Empty list of repositories
+                }
+            </ul>
+        </div>
+        <div class="col-md-4 col-xs-12 mx-auto">
+            <div class="mb-3">
+                <app-bookmarks [bookmarks]="bookmarks"></app-bookmarks>
+            </div>
+        </div>
+        <div class="col-md-2 col-xs-12 mx-auto">
+            <button class="btn btn-primary" (click)="logout()">Logout</button>
+        </div>
+    </div>
+</div>
